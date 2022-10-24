@@ -48,16 +48,17 @@ def bingocheck(D, output=0):  # (Recent drawn num) : Checks the rows and colums 
             for columx in range(5):  # makes colum
                 colum.append(bingoBoards[board][columx][row])
 
-            print("First: {0} {1} {2}\nSecond: {3} {4} {5}\nDrawn: {6}".format(bingoBoards[board][row] == [highDrawn + 1] * 5, bingoBoards[board][row], [highDrawn + 1] * 5, colum == [highDrawn + 1] * 5, colum, [highDrawn + 1] * 5, D))
+            # Debug VVV
+            # print("First: {0} {1} {2}\nSecond: {3} {4} {5}\nDrawn: {6}".format(bingoBoards[board][row] == [highDrawn + 1] * 5, bingoBoards[board][row], [highDrawn + 1] * 5, colum == [highDrawn + 1] * 5, colum, [highDrawn + 1] * 5, D))
 
             if bingoBoards[board][row] == [highDrawn + 1] * 5:  # checks row for bingo
                 coless = bingodump(bingoBoards[board], D)
-                print(coless)
+                print("Board sum * Recent draw: {0}".format(coless))
                 sys.exit(2)
 
             if colum == [highDrawn + 1] * 5:
                 coless = bingodump(bingoBoards[board], D)  # checks colum for bingo
-                print(coless)
+                print("Board sum * Recent draw: {0}".format(coless))
                 sys.exit(2)
 
 
